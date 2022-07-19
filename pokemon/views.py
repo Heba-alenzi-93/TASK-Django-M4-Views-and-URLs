@@ -5,7 +5,9 @@ from .models import Pokemon
 def get_pokemon (request,pokemon_id):
     pokemons = Pokemon.objects.get(id =pokemon_id )
     print(pokemons)
-    return HttpResponse (f"{pokemons.name}\n {pokemons.type}\n {pokemons.hp}")
+    return HttpResponse (f"""<ol><li> name: {pokemons.name}</li>
+     <li> type:{pokemons.type}</li>
+     <li> hp: {pokemons.hp} </li> </ol>""")
 
 
 def get_pokemons (request):
